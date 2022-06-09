@@ -3,12 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build1": "yarn build:contract",
+    "build:contract": "asb",
+    "build:contract:debug": "asb --target debug",
+    "build:web": "parcel build src/index.html --public-url ./",
+    "deploy": "yarn build1 && near deploy",
+    "dev": "yarn build:contract:debug && near dev-deploy && vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev:start": "env-cmd -f ./neardev/dev-account.env parcel vue-cli-service serve"
   },
   "dependencies": {
+    "ava": "^4.3.0",
     "core-js": "^3.6.5",
+    "near-api-js": "^0.44.2",
+    "near-cli": "^3.3.1",
+    "near-sdk-as": "^3.2.3",
+    "near-workspaces": "^2.0.0",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -20,6 +35,7 @@
     "@vue/cli-plugin-vuex": "~4.5.10",
     "@vue/cli-service": "~4.5.10",
     "babel-eslint": "^10.1.0",
+    "big.js": "^6.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
