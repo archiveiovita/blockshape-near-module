@@ -12,7 +12,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev:start": "env-cmd -f ./neardev/dev-account.env parcel vue-cli-service serve"
+    "dev:start": "env-cmd -f ./neardev/dev-account.env parcel vue-cli-service serve",
+    "production": "vue-cli-service serve --mode production"
   },
   "dependencies": {
     "ava": "^4.3.0",
