@@ -1,10 +1,6 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/donate">Donate</router-link>
-      |
       <a href="#" v-if="currentUser" @click="signOut">Sign Out</a>
 
       <h2 v-if="currentUser">Welcome <i>{{ currentUser.accountId }}</i></h2>
